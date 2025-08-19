@@ -1,0 +1,9 @@
+{
+  "label": "知识库",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "FastGPT 知识库管理和使用指南"
+  }
+}
+
