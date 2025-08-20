@@ -1,0 +1,8 @@
+{
+  "label": "工作流节点",
+  "position": 3.5,
+  "link": {
+    "type": "generated-index",
+    "description": "FastGPT 工作流节点详细说明和配置指南，包含各种节点的使用方法和参数设置。"
+  }
+}

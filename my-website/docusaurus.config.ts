@@ -70,9 +70,9 @@ const config: Config = {
       hideOnScroll: false,
       items: [
         {type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: '使用文档'},
-        {to: '/docs/使用案例', label: '使用案例', position: 'left'},
-        {to: '/docs/常见问题', label: '常见问题', position: 'left'},
-        {to: '/docs/更新日志', label: '更新日志', position: 'left'},
+        {type: 'docSidebar', sidebarId: 'useCasesSidebar', position: 'left', label: '使用案例'},
+        {type: 'docSidebar', sidebarId: 'faqSidebar', position: 'left', label: '常见问题'},
+        {type: 'docSidebar', sidebarId: 'changelogSidebar', position: 'left', label: '更新日志'},
         {
           href: 'https://github.com/labring/FastGPT',
           label: 'GitHub',
