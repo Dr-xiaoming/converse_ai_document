@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'FastGPT',
+  tagline: '基于 LLM 大语言模型的知识库问答系统',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -42,26 +42,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -69,25 +54,27 @@ const config: Config = {
     ],
   ],
 
+
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'FastGPT',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'FastGPT Logo',
         src: 'img/logo.svg',
+        href: '/docs/intro',
+        target: '_self',
       },
+      hideOnScroll: false,
       items: [
+        {type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: '使用文档'},
+        {type: 'docSidebar', sidebarId: 'useCasesSidebar', position: 'left', label: '使用案例'},
+        {type: 'docSidebar', sidebarId: 'faqSidebar', position: 'left', label: '常见问题'},
+        {type: 'docSidebar', sidebarId: 'changelogSidebar', position: 'left', label: '更新日志'},
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/labring/FastGPT',
           label: 'GitHub',
           position: 'right',
         },
@@ -97,46 +84,54 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Tutorial',
+              label: '快速开始',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: '使用案例',
+              to: '/docs/使用案例',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: '常见问题',
+              to: '/docs/常见问题',
             },
           ],
         },
         {
-          title: 'More',
+          title: '社区',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/labring/FastGPT',
+            },
+            {
+              label: 'Issues',
+              href: 'https://github.com/labring/FastGPT/issues',
+            },
+            {
+              label: 'Discussions',
+              href: 'https://github.com/labring/FastGPT/discussions',
+            },
+          ],
+        },
+        {
+          title: '更多',
+          items: [
+            {
+              label: '更新日志',
+              to: '/docs/更新日志',
+            },
+            {
+              label: '官方网站',
+              href: 'https://fastgpt.cn',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} FastGPT Team. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
